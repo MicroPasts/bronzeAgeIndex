@@ -1,13 +1,11 @@
-PyBossa demo application Flickr Person
-======================================
+Bronze Age Index app for PyBossa
+================================
 
 This application has three files:
 
 *  createTasks.py: for creating the application in PyBossa, and fill it with some tasks.
 *  template.html: the view for every task and deal with the data of the answers.
 *  tutorial.html: a simple tutorial for the volunteers.
-
-![alt screenshot](http://i.imgur.com/63SmFEu.png)
 
 Testing the application
 =======================
@@ -41,6 +39,3 @@ Please, see the COPYING file.
 Acknowledgments
 ===============
 The thumbnail has been created using a [photo](http://www.flickr.com/photos/mcgraths/3289448299/) from Sean McGrath (license CC BY 2.0). 
-
-
-**Note**: You can see the results of the CrowdCrafting app [here](http://dev.pybossa.com/app-flickrperson/results.html)
