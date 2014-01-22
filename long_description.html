@@ -1,67 +1,27 @@
 <div class="row-fluid">
     <div class="span12">
         <p>
-        Flickr Person is a <strong>demo application</strong> for PyBossa that shows how you can 
-        crowdsourcing an image classification problem.
+        This British Museum's Bronze Age Index application, is aimed at helping
+        the curator of Bronze Age collections catalogue a corpus of around 30,000
+        index cards. These cards have been collated at the British Museum for over
+        50 years and contain an untapped resource.
         </p>
         <p>
-        This application uses the Flickr web service as the source of the data.
-        By using Flickr, we have the possibility of using its API to refine the
-        searches, and looking for specific tags or descriptions that match a 
-        specific criteria, i.e. houses of 1920 or tsunami.
+        The cards have been scanned and uploaded to Flickr, so that its API can be
+        used to retrieve and manipulate the scans. These cards hold relatively
+        standardised data:
         </p>
-        <p>
-        In this demo application, we use a very simple approach by polling the 
-        latest 20 published photos in the public Flickr feed.
-        </p>
-    </div>
-</div>
-<div class="row-fluid">
-    <div class="span9">
-        <p>
-        The feed provides the direct link to the photo. This link is used to show 
-        the image to the users, and ask them the following question: <strong>Do 
-            you see a human in this photo?</strong> 
-        </p>
-        <p>
-        The application provides three simple answers as action buttons: 
         <ul>
-            <li>Yes</li>
-            <li>No and</li>
-            <li><a href="#" rel="tooltip" title="Sometimes a photo has been removed,
-                so you don't know if there is a human in it or not">I don't know</a>
-                </li>
+            <li>Front: Place of discovery, dimensions, description etc</li>
+            <li>Reverse: A line drawing of the object</li>
         </ul>
+        <p>
+        What the research team would like people to do, is to transcribe these cards
+        and enter the details from each of these into pre-determined fields and
+        attempt to geo-reference the object via the place of discovery.
+        By doing this, these cards can complement the data already entered into
+        the British Museum collections management system (Merlin), but can also be
+        uploaded to the Portable Antiquities Scheme database.
         </p>
-    </div>
-    <div class="span2">
-            <img class="img-polaroid" src="http://farm7.staticflickr.com/6109/6286728068_2f3c6912b8_q.jpg">
     </div>
 </div>
-<div class="row-fluid">
-    <div class="span12">
-        <p>
-        Based on the answer of the users, we will be able to classify the photos, 
-        distributing the tasks (thanks to PyBossa) to different users and volunteers.
-        </p>
-        <p>
-        <span class="label label-warning">
-            <i class="icon icon-white icon-bullhorn"></i>
-             Note</span> If you want to learn more about how to use this application as a template,
-         check the:
-         <ul>
-             <li><a href="http://github.com/PyBossa/app-flickrperson">source code</a></li>
-             <li><a href="https://docs.google.com/spreadsheet/ccc?key=0AsNlt0WgPAHwdHFEN29mZUF0czJWMUhIejF6dWZXdkE&usp=sharing#gid=0"> Google Spreadsheet Task Template</a></li>
-             <li><a href="http://docs.pybossa.com/">the official documentation of PyBossa</a> and </li>
-             <li><a href="http://docs.pybossa.com/en/latest/user/tutorial.html">the step by step tutorial.</a></li>
-         </ul>
-        </p>
-        <hr>
-        <iframe src="http://ghbtns.com/github-btn.html?user=PyBossa&repo=app-flickrperson&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
-
-        <iframe src="http://ghbtns.com/github-btn.html?user=PyBossa&repo=app-flickrperson&type=fork&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
-    </div>
-</div>
-<script type="text/javascript">
-    $("[rel=tooltip]").tooltip();
-</script>
