@@ -38,4 +38,4 @@ Please, see the COPYING file.
 
 Acknowledgments
 ===============
-The thumbnail has been created using a [photo](http://www.flickr.com/photos/mcgraths/3289448299/) from Sean McGrath (license CC BY 2.0). 
+The thumbnail is from the Portable Antiquities Scheme and shows a fragment of gold torc, documented at http://finds.org.uk/database/artefacts/record/id/460255 Image licensed as CC BY-SA. 
