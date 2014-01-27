@@ -13,6 +13,11 @@
     #map_canvas img {
         max-width: none;
     }
+    .affix-bottom {
+        position: absolute;
+        top: 1700px;
+        bottom: 400px;
+    }
 
 </style>
 
@@ -180,7 +185,7 @@
             </form>
             <button class="btn btn-large btn-info btn-answer" value='Yes'>Submit the transcription</button>
     </div><!-- End of Question and Submission DIV (column) -->
-    <div id="photo-link" class="span8 offset4 affix" data-spy="affix" data-offset-top="200px"><!-- Start of Photo DIV (column) -->
+    <div id="photo-link" class="span8 offset4" data-spy="affix" data-offset-bottom="50"><!-- Start of Photo DIV (column) -->
             <img id="photo" src="http://i.imgur.com/GeHxzb7.png" style="max-width=100%">
     </div><!-- End of Photo DIV (columnt) -->
 
