@@ -1,9 +1,10 @@
 Bronze Age Index app for PyBossa
 ================================
 
-This application has three files:
+This application has four files:
 
 *  createTasks.py: for creating the application in PyBossa, and fill it with some tasks.
+*  config.py.template: for configuring the Flickr API KEY (required!)
 *  template.html: the view for every task and deal with the data of the answers.
 *  tutorial.html: a simple tutorial for the volunteers.
 
@@ -13,7 +14,7 @@ Testing the application
 You need to install the pybossa-client first (use a virtualenv):
 
 ```bash
-    $ pip install pybossa-client
+    $ pip install -r requirements.txt
 ```
 Then, you can follow the next steps:
 
