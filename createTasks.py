@@ -19,7 +19,7 @@
 import json
 from optparse import OptionParser
 import pbclient
-from get_images import get_flickr_photos
+from get_images import get_flickr_set_photos
 import random
 import logging
 from requests import exceptions
@@ -41,6 +41,11 @@ def handle_arguments():
     parser.add_option("-k", "--api-key", dest="api_key",
                       help="PyBossa User API-KEY to interact with PyBossa",
                       metavar="API-KEY")
+    # Flickr Photoset ID
+    parser.add_option("-i", "--id", dest="photoset_id",
+                      help="Flickr Photoset ID to import",
+                      metavar="PHOTOSET-ID")
+
     # Create App
     parser.add_option("-c", "--create-app", action="store_true",
                       dest="create_app",
@@ -147,11 +152,7 @@ def run(app_config, options):
 
     def create_photo_task(app, photo, question, priority=0):
         # Data for the tasks
-        task_info = dict(question=question,
-                         n_answers=options.n_answers,
-                         link=photo['link'],
-                         url_m=photo['url_m'],
-                         url_b=photo['url_b'])
+        task_info = photo
         try:
             response = pbclient.create_task(app.id, task_info, priority_0=priority)
             check_api_error(response)
@@ -162,7 +163,7 @@ def run(app_config, options):
         # First of all we get the URL photos
         # Then, we have to create a set of tasks for the application
         # For this, we get first the photo URLs from Flickr
-        photos = get_flickr_photos()
+        photos = get_flickr_set_photos(options.photoset_id)
         question = app_config['question']
         [create_photo_task(app, p, question, priority=random.random()) for p in photos]
 
