@@ -80,6 +80,9 @@
                         <input id="site" name="site" type="text" placeholder="Left of card"></textarea>
                         <button id="searchBtn" class="btn btn-answer" value="search" type="button"><i class="icon-search"></i></button>
                     </div>
+                    <div style="display:none" id="searching" class="alert alert-info">Searching...</div>
+                    <div style="display:none" id="searchingError" class="alert alert-error">Not Found!</div>
+                    <!-- <div style="display:none" id="searchingDone" class="alert alert-success">Found!</div> -->
                     <div id="map"></div>
                 </div>
                 
@@ -227,7 +230,9 @@ function loadUserProgress() {
 // });
 
 // This function will load the marker of the city, and center the map on it
-function search(task, city) {
+function search(task, city, zoom) {
+    zoom = (typeof zoom === "undefined") ? 4 : zoom;
+    console.log(zoom);
     if (city) {
         var place = city;
         $("#searchingError").hide();
@@ -272,7 +277,7 @@ function search(task, city) {
             task.latitude = lonLat.lat;
             task.objectLayer.addFeatures([new OpenLayers.Feature.Vector(point)]);
             // Center the map
-            task.map.setCenter(lonLat, 4);
+            task.map.setCenter(lonLat, zoom);
             //lonLat.transform(
             //        map.getProjectionObject(), // from Spherical Mercator Projection
             //        new OpenLayers.Projection("EPSG:4326") // to transform from WGS 1984
@@ -461,7 +466,8 @@ pybossa.presentTask(function(task, deferred) {
             if (typeof answer != 'undefined') {
                 console.log(answer);
                 if (answer == 'search') {
-                    search(task, $("#site").val());
+                    $("#searching").show();
+                    search(task, $("#site").val(), 15);
                 }
                 else {
                     task.answer = $("#transcription").serializeJSON();
