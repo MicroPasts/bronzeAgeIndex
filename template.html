@@ -20,40 +20,18 @@
     #map_canvas img {
         max-width: none;
     }
+    .affix {
+        width: inherit;
+        height: 0px;
+    }
     .affix-bottom {
-        position: absolute;
-        top: 1700px;
-        bottom: 400px;
+        position: fixed;
+        bottom: 122px;
     }
 </style>
 
 <div class="row">
     <!-- Success and Error Messages for the user --> 
-    <div class="span6 offset2" style="height:50px">
-        <div id="success" class="alert alert-success" style="display:none;">
-            <a class="close">×</a>
-            <strong>Well done!</strong> Your answer has been saved
-        </div>
-        <div id="loading" class="alert alert-info" style="display:none;">
-            <a class="close">×</a>
-            Loading next task...
-        </div>
-        <div id="taskcompleted" class="alert alert-info" style="display:none;">
-            <strong>The task has been completed!</strong> Thanks a lot!
-        </div>
-        <div id="finish" class="alert alert-success" style="display:none;">
-            <strong>Congratulations!</strong> You have participated in all available tasks!
-            <br/>
-            <div class="alert-actions">
-                <a class="btn small" href="/">Go back</a>
-                <a class="btn small" href="/app">or, Check other applications</a>
-            </div>
-        </div>
-        <div id="error" class="alert alert-error" style="display:none;">
-            <a class="close">×</a>
-            <strong>Error!</strong> Something went wrong, please contact the site administrators
-        </div>
-    </div> <!-- End Success and Error Messages for the user -->
 </div> <!-- End of Row -->
 
 <!--
@@ -68,13 +46,13 @@
     </div>
 </div>
 <div class="row skeleton">
-    <div class="span4"><!-- Start of Question and Submission DIV (column) -->
+    <div id="questions" class="span4"><!-- Start of Question and Submission DIV (column) -->
             <!-- If the user clicks this button, the saved answer will be value="yes"-->
             <form id="transcription">
                 <div class="control-group">
                     <label class="control-label" for="dateDiscovery">Date of Discovery</label>
                     <div class="controls">
-                        <input type="text" name="dateDiscovery" class="pickadate" placeholder="Top Left Corner" style="cursor:text;">
+                        <input type="text" name="dateDiscovery" class="pickadate" placeholder="Check Top Left Corner" style="cursor:text;">
                     </div>
                 </div>
 
@@ -198,8 +176,35 @@
             </form>
             <button class="btn btn-large btn-info btn-answer" value='Yes'>Submit the transcription</button>
     </div><!-- End of Question and Submission DIV (column) -->
-    <div id="photo-link" class="span8 offset4" data-spy="affix" data-offset-bottom="50"><!-- Start of Photo DIV (column) -->
-            <img id="photo" src="http://i.imgur.com/GeHxzb7.png" style="max-width=100%">
+    <div id="photo-link" class="span8"><!-- Start of Photo DIV (column) -->
+        <div class="span6 offset2">
+            <div id="success" class="alert alert-success" style="display:none;">
+                <a class="close">×</a>
+                <strong>Well done!</strong> Your answer has been saved
+            </div>
+            <div id="loading" class="alert alert-info" style="display:none;">
+                <a class="close">×</a>
+                Loading next task...
+            </div>
+            <div id="taskcompleted" class="alert alert-info" style="display:none;">
+                <strong>The task has been completed!</strong> Thanks a lot!
+            </div>
+            <div id="finish" class="alert alert-success" style="display:none;">
+                <strong>Congratulations!</strong> You have participated in all available tasks!
+                <br/>
+                <div class="alert-actions">
+                    <a class="btn small" href="/">Go back</a>
+                    <a class="btn small" href="/app">or, Check other applications</a>
+                </div>
+            </div>
+            <div id="error" class="alert alert-error" style="display:none;">
+                <a class="close">×</a>
+                <strong>Error!</strong> Something went wrong, please contact the site administrators
+            </div>
+        </div> <!-- End Success and Error Messages for the user -->
+        <div id="algo" data-spy="affix" data-offset-top="1" data-offset-bottom="750">
+            <img src="http://i.imgur.com/GeHxzb7.png" style="max-width=100%">
+        </div>
     </div><!-- End of Photo DIV (columnt) -->
 
 </div><!-- End of Skeleton Row -->
@@ -471,7 +476,9 @@ pybossa.taskLoaded(function(task, deferred) {
 pybossa.presentTask(function(task, deferred) {
     if ( !$.isEmptyObject(task) ) {
         loadUserProgress();
-        $('#photo-link').html('').append(task.info.image);
+
+        console.log($("#questions").offset().top);
+        $('#algo').html('').append(task.info.image);
         //$("#photo-link").attr("href", task.info.link);
         $("#question").html(task.info.question);
         $('#task-id').html(task.id);
@@ -505,6 +512,7 @@ pybossa.presentTask(function(task, deferred) {
 
                     task.answer.geojson = JSON.parse(geojson.write(task.objectLayer.features[0]));
                     pybossa.saveTask(task.id, task.answer).done(function() {
+                        $("#map_" + task.id).hide();
                         deferred.resolve();
                     });
                     $("#loading").fadeIn(500);
