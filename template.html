@@ -52,7 +52,7 @@
                 <div class="control-group">
                     <label class="control-label" for="dateDiscovery">Date of Discovery</label>
                     <div class="controls">
-                        <input type="text" name="dateDiscovery" placeholder="Check Top Left Corner" style="cursor:text;">
+                        <input type="number" name="dateDiscovery" placeholder="Check Top Left Corner" style="cursor:text;">
                     </div>
                 </div>
 
@@ -100,31 +100,31 @@
                 <div class="control-group">
                     <label class="control-label" for="length">Length</label>
                     <div class="controls">
-                        <input type="text" name="length" placeholder="In milimeters">
+                        <input type="number" min="0" name="length" placeholder="In milimeters">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="width">Width</label>
                     <div class="controls">
-                        <input type="text" name="width" placeholder="In milimeters">
+                        <input type="number" min="0" name="width" placeholder="In milimeters">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="edge">Edge</label>
                     <div class="controls">
-                        <input type="text" name="edge" placeholder="In milimeters">
+                        <input type="number" min="0" name="edge" placeholder="In milimeters">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="thickness">Thickness</label>
                     <div class="controls">
-                        <input type="text" name="thickness" placeholder="In milimeters">
+                        <input type="number" min="0" name="thickness" placeholder="In milimeters">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="weight">Weight</label>
                     <div class="controls">
-                        <input type="text" name="weight" placeholder="In grams">
+                        <input type="number" min="0" name="weight" placeholder="In grams">
                     </div>
                 </div>
                 <div class="control-group">
@@ -476,8 +476,11 @@ pybossa.taskLoaded(function(task, deferred) {
 pybossa.presentTask(function(task, deferred) {
     if ( !$.isEmptyObject(task) ) {
         loadUserProgress();
-
-        console.log($("#questions").offset().top);
+        $(':input','#transcription')
+           .not(':button, :submit, :reset, :hidden')
+           .val('')
+           .removeAttr('checked')
+           .removeAttr('selected');
         $('#algo').html('').append(task.info.image);
         //$("#photo-link").attr("href", task.info.link);
         $("#question").html(task.info.question);
