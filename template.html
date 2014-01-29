@@ -81,6 +81,21 @@
                     <div class="alert alert-info">Drag & drop the <img style="width:16px;" src="http://img225.imageshack.us/img225/5237/youarehere2.png"/> to set location</div>
                     <div id="map"></div>
                 </div>
+                <p style="font-size:16px">I believe the location I have given on the map is accurate to within:</p>
+                <div class="control-group">
+                    <label class="radio">
+                    <input type="radio" name="optionsAccuracy" id="optionsAccuracy100" value="100" checked>
+                    100 meters
+                    </label>
+                    <label class="radio">
+                    <input type="radio" name="optionsAccuracy" id="optionsAccuracy1000" value="1000">
+                    1 kilometer
+                    </label>
+                    <label class="radio">
+                    <input type="radio" name="optionsAccuracy" id="optionsAccuracy10000" value="10000">
+                    10 kilometers
+                    </label>
+                </div>
                 
                 <div class="control-group">
                     <label class="control-label" for="collection">Collection</label>
@@ -255,7 +270,6 @@ function loadUserProgress() {
 // This function will load the marker of the city, and center the map on it
 function search(task, city, zoom) {
     zoom = (typeof zoom === "undefined") ? 4 : zoom;
-    console.log(zoom);
     if (city) {
         var place = city;
         $("#searchingError").hide();
@@ -263,7 +277,6 @@ function search(task, city, zoom) {
     else {
         $("#searching").show();
         $("#searchingError").hide();
-        console.log($("#site").val());
         if ($('#site').val()) {
             var place = $("#site").val(); 
         }
@@ -278,7 +291,6 @@ function search(task, city, zoom) {
     $.getJSON('http://nominatim.openstreetmap.org/search/' + place + '?format=json', function(output) {
         if (output.length >= 1) {
             //console.log("Lon: "+ output[0].lon + " Lat: " + output[0].lat);
-            console.log(output[0]);
             // Clean previous markers
             $("#navigate").addClass("active");
             $("#point").removeClass("disabled");
@@ -477,7 +489,7 @@ pybossa.presentTask(function(task, deferred) {
     if ( !$.isEmptyObject(task) ) {
         loadUserProgress();
         $(':input','#transcription')
-           .not(':button, :submit, :reset, :hidden')
+           .not(':button, :submit, :reset, :hidden, :radio')
            .val('')
            .removeAttr('checked')
            .removeAttr('selected');
@@ -504,9 +516,13 @@ pybossa.presentTask(function(task, deferred) {
                 else {
                     task.answer = $("#transcription").serializeJSON();
                     // Remove unwanted names
-                    delete task.answer['City marker'];
-                    delete task.answer['OpenLayers_Control_LayerSwitcher_4_baseLayers'];
-                    delete task.answer['Urban park marker'];
+                    for (var key in task.answer) {
+                        if ((key == 'City marker') || (key == 'Urban park marker') || (key.indexOf('OpenLayers_') == 0)) {
+                            delete task.answer[key];
+                        }
+                    }
+                    task.answer.optionsAccuracy = $('input[name=optionsAccuracy]:checked', '#transcription').val();
+                    console.log(task.answer.optionsAccuracy);
                     // Convert the feature location into the GeoJSON format
                     var geojson = new OpenLayers.Format.GeoJSON({
                         'internalProjection': task.map.baseLayer.projection,
