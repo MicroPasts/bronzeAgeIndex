@@ -2,26 +2,63 @@
     <div class="span12">
         <div id="modal" class="modal hide fade">
             <div class="modal-header">
-                <h3>Flickr Person Finder tutorial</h3>
+                <h3>British Museum Bronze Age Index transcription tutorial</h3>
             </div>
             <div id="0" class="modal-body" style="display:none">
-                <p><strong>Hi!</strong> This is a <strong>demo application</strong> that shows how you can do pattern recognition on pictures or images using the PyBossa framework in Crowdcrafting.org.
-               </p> 
-            </div>
-            <div id="1" class="modal-body" style="display:none">
-                <p>The application is really simple. It loads a photo from <a href="http://flickr.com">Flickr</a> and asks you this question: <strong>Do you see a human in this photo?</strong></p>
-                <img src="http://farm7.staticflickr.com/6109/6286728068_2f3c6912b8_q.jpg" class="img-polaroid"/>
-                <p>You will have 3 possible answers:
-                <ul>
-                    <li>Yes,</li>
-                    <li>No, and</li>
-                    <li>I don't know</li>
-                </ul>
+                <p>
+                    <strong>Hello</strong>
                 </p>
                 <p>
+                    This application will help the <a href="http://www.britishmuseum.org">British Museum</a>'s curator of the Bronze Age,
+                    Neil Wilkin, to better understand a corpus of cards that have been collated
+                    by various scholars over the last few decades. These data will then
+                    either enhance the British Museum's collections database internally
+                    and also on their website, but data will also be uploaded to the
+                    <a href="http://finds.org.uk">Portable Antiquities Scheme website</a>.
                 </p>
-                <p>All you have to do is to click in one of the three possible answers and you will be done. This demo application could be adapted for more complex pattern recognition problems.</p>
+                <p>
+                    By importing all these data into the Portable Antiquities Scheme site,
+                    scholars and the public will be able to research many different object types
+                    in one single database and new research may be forthcoming.
+               </p>
             </div>
+            <div id="1" class="modal-body" style="display:none">
+                <p>
+                    The application is essentially very simple. When you participate,
+                    the platform will load a scanned image from the Bronze Age archive
+                    (stored on the MicroPasts <a href="http://flickr.com">Flickr</a> stream).
+                    Once the image has been loaded, you will be asked to transcribe the contents of each
+                    card. An example of a card is shown below.
+                </p>
+                <img src="http://farm8.staticflickr.com/7358/12171450486_3c097e993b_z.jpg" class="img-polaroid"/>
+            </div>
+
+            <div id="2" class="modal-body" style="display:none">
+                <p>
+                    Each card has similar characteristics and we have created set fields for
+                    entering the transcribed data into. These fields are generally as follows:
+                </p>
+                <ul>
+                    <li>Object type: found top centre (for example "Palstave")</li>
+                    <li>Place of discovery or site found: top left, under heading site</li>
+                    <li>The collection it came from: top right</li>
+                    <li>References: centre</li>
+                    <li>Dimensions & mass: centre left &amp; centre right, comprising of length, width, etc.</li>
+                    <li>Composition: centre left</li>
+                    <li>Description: centre (sometimes just a single word, repeating object type)</li>
+                    <li>Surface and patin: bottom left</li>
+                    <li>Associations: centre bottom</li>
+                    <li>Remarks: centre bottom</li>
+                </ul>
+            </div>
+
+            <div id="3" class="modal-body" style="display:none">
+                <p>
+                    So, once you have filled in the fields as best as you can, all
+                    you need to do is submit the form and perhaps try another.
+                </p>
+            </div>
+
             <div class="modal-footer">
                 <a id="prevBtn" href="#" onclick="showStep('prev')" class="btn">Previous</a>
                 <a id="nextBtn" href="#" onclick="showStep('next')" class="btn btn-success">Next</a>
