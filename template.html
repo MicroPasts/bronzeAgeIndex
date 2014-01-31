@@ -53,34 +53,32 @@
                 <div class="control-group">
                     <label class="control-label" for="objectType">Object Type</label>
                     <div class="controls">
-                        <input type="text" name="objectType" placeholder="Top of card">
+                        <input class="input-block-level" type="text" name="objectType" placeholder="Top of card">
                     </div>
                 </div>
 
                 <div class="control-group">
                     <label class="control-label" for="dateDiscovery">Date of Discovery</label>
                     <div class="controls">
-                        <input class="pickadate" type="number" name="dateDiscovery" placeholder="Check Top Left Corner" style="cursor:text;">
+                        <input class="input-block-level pickadate" type="number" name="dateDiscovery" placeholder="Check Top Left Corner" style="cursor:text;">
                     </div>
                 </div>
 
                 <div class="control-group">
                     <label class="control-label" for="rightCorner">Right Corner</label>
                     <div class="controls">
-                        <input type="text" name="rightCorner" placeholder="Right Corner">
+                        <input class="input-block-level"  type="text" name="rightCorner" placeholder="Right Corner">
                     </div>
                 </div>
                 <hr>
                 <div class="control-group">
                     <label class="control-label" for="site">Find spot</label>
-                    <div class="input-append">
-                        <input id="site" name="site" type="text" placeholder="Left of card"></textarea>
-                        <button id="searchBtn" class="btn btn-answer" value="search" type="button"><i class="icon-search"></i></button>
-                    </div>
-                    <div style="display:none" id="searching" class="alert alert-info">Searching...</div>
-                    <div style="display:none" id="searchingError" class="alert alert-error">Not Found!</div>
-                    <div class="alert alert-info">Drag & drop the <img style="width:16px;" src="http://img225.imageshack.us/img225/5237/youarehere2.png"/> to set location</div>
-                    <div id="map"></div>
+                        <textarea id="toSearch" name="site" type="text" class="input-block-level" placeholder="Country, City, Street, number, zip code"></textarea>
+                        <button id="searchBtn" class="btn btn-answer" value="search" type="button"><i class="icon-search"></i> Search</button>
+                        <div style="display:none;margin-top:15px;" id="searching" class="alert alert-info"><img src="/static/img/loading.gif"> Searching...</div>
+                    <div style="display:none;margin-top:15px;" id="searchingError" class="alert alert-error">Not Found!</div>
+                    <div id="searchingTip" class="alert alert-info" style="display:none; margin-top:10px;">Drag & drop the <img style="width:16px;" src="http://img225.imageshack.us/img225/5237/youarehere2.png"/> to improve the location</div>
+                    <div id="map" style="margin-top:15px;"></div>
                 </div>
                 <p style="font-size:16px">I believe the location I have given on the map is accurate to within:</p>
                 <div class="control-group">
@@ -101,21 +99,21 @@
                 <div class="control-group">
                     <label class="control-label" for="gridRef">Grid Reference</label>
                     <div class="controls">
-                        <textarea name="gridRef" rows="3" placeholder="Top left of card"></textarea>
+                        <textarea name="gridRef" class="input-block-level" placeholder="Top left of card"></textarea>
                     </div>
                 </div>
 
                 <div class="control-group">
                     <label class="control-label" for="collection">Collection</label>
                     <div class="controls">
-                        <textarea name="site" rows="3" placeholder="Right of card"></textarea>
+                        <textarea name="collection" class="input-block-level" placeholder="Right of card"></textarea>
                     </div>
                 </div>
                 <hr>
                 <div class="control-group">
                     <label class="control-label" for="publications">Publications</label>
                     <div class="controls">
-                        <input type="text" name="publications" placeholder="Centre of card">
+                        <input class="input-block-level"  type="text" name="publications" placeholder="Centre of card">
                     </div>
                 </div>
 
@@ -123,76 +121,76 @@
                 <div class="control-group">
                     <label class="control-label" for="length">Length</label>
                     <div class="controls">
-                        <input type="number" min="0" name="length" placeholder="In millimetres">
+                        <input class="input-block-level"  type="number" min="0" name="length" placeholder="In millimetres">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="width">Width</label>
                     <div class="controls">
-                        <input type="number" min="0" name="width" placeholder="In milimeters">
+                        <input class="input-block-level"  type="number" min="0" name="width" placeholder="In milimeters">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="edge">Edge</label>
                     <div class="controls">
-                        <input type="number" min="0" name="edge" placeholder="In millimeters">
+                        <input class="input-block-level"  type="number" min="0" name="edge" placeholder="In millimeters">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="thickness">Thickness</label>
                     <div class="controls">
-                        <input type="number" min="0" name="thickness" placeholder="In millimetres">
+                        <input class="input-block-level"  type="number" min="0" name="thickness" placeholder="In millimetres">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="weight">Weight</label>
                     <div class="controls">
-                        <input type="number" min="0" name="weight" placeholder="In grammes">
+                        <input class="input-block-level"  type="number" min="0" name="weight" placeholder="In grammes">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="composition">Composition</label>
                     <div class="controls">
-                        <input type="text" name="composition" placeholder="Below measurements">
+                        <input class="input-block-level"  type="text" name="composition" placeholder="Below measurements">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="description">Description</label>
                     <div class="controls">
-                        <textarea type="text" name="description" row="3" placeholder="Below measurements"></textarea>
+                        <textarea type="text" name="description" class="input-block-level" placeholder="Below measurements"></textarea>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="surface">Surface</label>
                     <div class="controls">
-                        <input type="text" name="surface" placeholder="Left of card">
+                        <input class="input-block-level"  type="text" name="surface" placeholder="Left of card">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="patina">Patina</label>
                     <div class="controls">
-                        <input type="text" name="patina" placeholder="Towards bottom left of card">
+                        <input class="input-block-level"  type="text" name="patina" placeholder="Towards bottom left of card">
                     </div>
                 </div>
                 <hr>
                 <div class="control-group">
                     <label class="control-label" for="associations">Associations</label>
                     <div class="controls">
-                        <input type="text" name="associations" placeholder="Bottom centre of card">
+                        <input class="input-block-level"  type="text" name="associations" placeholder="Bottom centre of card">
                     </div>
                 </div>
                 <hr>
                 <div class="control-group">
                     <label class="control-label" for="remarks">Remarks</label>
                     <div class="controls">
-                        <input type="text" name="remarks" placeholder="Bottom centre of card">
+                        <input class="input-block-level"  type="text" name="remarks" placeholder="Bottom centre of card">
                     </div>
                 </div>
                 <hr>
                 <div class="control-group">
                     <label class="control-label" for="other">Other Notes</label>
                     <div class="controls">
-                        <input type="text" name="other" placeholder="">
+                        <input class="input-block-level"  type="text" name="other" placeholder="">
                     </div>
                 </div>
 
@@ -284,6 +282,8 @@ function loadUserProgress() {
 // This function will load the marker of the city, and center the map on it
 function search(task, city, zoom) {
     zoom = (typeof zoom === "undefined") ? 4 : zoom;
+    city = city.replace(/\n/g,' ');
+    console.log(city);
     if (city) {
         var place = city;
         $("#searchingError").hide();
@@ -291,8 +291,8 @@ function search(task, city, zoom) {
     else {
         $("#searching").show();
         $("#searchingError").hide();
-        if ($('#site').val()) {
-            var place = $("#site").val();
+        if ($('#toSearch').val()) {
+            var place = $("#toSearch").val();
         }
         else {
             $("#searching").hide();
@@ -335,8 +335,12 @@ function search(task, city, zoom) {
             $("#lon").text("-");
             $("#lat").text("-");
 
+            if (zoom !=4 ) {
+                $("#searchingTip").show();
+            }
+
             // Only show the messages when looking for user input
-            if ($('#site').val()) {
+            if ($('#toSearch').val()) {
                 $("#searching").hide().fadeOut();
                 $("#searchingDone").show().fadeIn().delay(2000).fadeOut();
             }
@@ -511,6 +515,7 @@ pybossa.presentTask(function(task, deferred) {
            .removeAttr('selected');
         $('#imgContainer').html('').append(task.info.image);
         //$("#photo-link").attr("href", task.info.link);
+        $("#searchingTip").hide();
         $("#question").html(task.info.question);
         $('#task-id').html(task.id);
         $('#img_task_' + task.id).wheelzoom();
@@ -539,10 +544,11 @@ pybossa.presentTask(function(task, deferred) {
                 console.log(answer);
                 if (answer == 'search') {
                     $("#searching").show();
-                    search(task, $("#site").val(), 15);
+                    search(task, $("#toSearch").val(), 15);
                 }
                 else {
                     task.answer = $("#transcription").serializeJSON();
+                    console.log(task.answer);
                     // Remove unwanted names
                     for (var key in task.answer) {
                         if ((key == 'City marker') || (key == 'Urban park marker') || (key.indexOf('OpenLayers_') == 0)) {
@@ -558,6 +564,9 @@ pybossa.presentTask(function(task, deferred) {
                         });
 
                     task.answer.geojson = JSON.parse(geojson.write(task.objectLayer.features[0]));
+
+                    task.answer.site = task.answer.site.replace(/\n/g,', ').toLowerCase();
+                    console.log(task.answer);
                     pybossa.saveTask(task.id, task.answer).done(function() {
                         $("#map_" + task.id).hide();
                         $('#img_task_' + task.id).trigger('wheelzoom.reset');
