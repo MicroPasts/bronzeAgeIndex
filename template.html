@@ -225,7 +225,7 @@
                 <strong>Error!</strong> Something went wrong, please contact the site administrators
             </div>
         </div> <!-- End Success and Error Messages for the user -->
-        <div id="algo" data-spy="affix" data-offset-top="1" data-offset-bottom="750">
+        <div id="imgContainer" data-spy="affix" data-offset-top="1" data-offset-bottom="750">
             <img src="http://i.imgur.com/GeHxzb7.png" style="max-width=100%">
         </div>
     </div><!-- End of Photo DIV (columnt) -->
@@ -501,7 +501,7 @@ pybossa.presentTask(function(task, deferred) {
            .val('')
            .removeAttr('checked')
            .removeAttr('selected');
-        $('#algo').html('').append(task.info.image);
+        $('#imgContainer').html('').append(task.info.image);
         //$("#photo-link").attr("href", task.info.link);
         $("#question").html(task.info.question);
         $('#task-id').html(task.id);
@@ -514,6 +514,7 @@ pybossa.presentTask(function(task, deferred) {
 
 
         $('.btn-answer').off('click').on('click', function(evt) {
+            evt.preventDefault();
             var answer = $(evt.target).attr("value");
             if (typeof answer != 'undefined') {
                 console.log(answer);
@@ -550,6 +551,8 @@ pybossa.presentTask(function(task, deferred) {
                 }
             }
             else {
+                console.log(answer);
+                console.log(typeof(answer));
                 $("#error").show();
             }
         });
