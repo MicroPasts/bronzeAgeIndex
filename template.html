@@ -254,6 +254,12 @@
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 <script>
+// Quick fix for IE8
+Modernizr.load({
+  test: window.JSON,
+  nope: 'json2.js'
+});
+
 function loadUserProgress() {
     pybossa.userProgress('bronzeageindex').done(function(data){
         var pct = Math.round((data.done*100)/data.total);
