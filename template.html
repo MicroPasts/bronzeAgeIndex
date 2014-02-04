@@ -74,9 +74,12 @@
                 </div>
                 <hr>
                 <div class="control-group">
-                    <label class="control-label" for="site">Find spot</label>
-                        <textarea id="toSearch" name="site" type="text" class="input-block-level" placeholder="Country, City, Street, number, zip code"></textarea>
-                        <button id="searchBtn" class="btn btn-answer" value="search" type="button"><i class="icon-search"></i> Search</button>
+                    <label class="control-label" for="site">Site</label>
+                        <textarea name="site" type="text" class="input-block-level" placeholder="Left of the card"></textarea>
+                        <div class="input-append input-block-level">
+                            <input type="text" id="toSearch" name="toSearch" style="width:196px;" placeholder="Geolocate the site in a map"></input>
+                            <button id="searchBtn" class="btn btn-answer" value="search" type="button"><i class="icon-search"></i> Search</button>
+                        </div>
                         <div style="display:none;margin-top:15px;" id="searching" class="alert alert-info"><img src="/static/img/loading.gif"> Searching...</div>
                     <div style="display:none;margin-top:15px;" id="searchingError" class="alert alert-warning"><strong>Location not found</strong>. If you know where it is approximately, please drag and drop the icon <img style="width:16px;" src="http://img225.imageshack.us/img225/5237/youarehere2.png"/> in the map.</div>
                     <div id="searchingTip" class="alert alert-info" style="display:none; margin-top:10px;">Drag & drop the <img style="width:16px;" src="http://img225.imageshack.us/img225/5237/youarehere2.png"/> to improve the location</div>
@@ -586,7 +589,8 @@ pybossa.presentTask(function(task, deferred) {
 
                     task.answer.geojson = JSON.parse(geojson.write(task.objectLayer.features[0]));
 
-                    task.answer.site = task.answer.site.replace(/\n/g,', ').toLowerCase();
+                    task.answer.toSearch = task.answer.toSearch.replace(/\n/g,', ').toLowerCase();
+                    task.answer.site = task.answer.site.replace(/\r\n/g,', ').toLowerCase();
                     console.log(task.answer);
                     pybossa.saveTask(task.id, task.answer).done(function() {
                         $("#map_" + task.id).hide();
