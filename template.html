@@ -32,6 +32,9 @@
 
 <div class="row">
     <!-- Success and Error Messages for the user -->
+    <div style="display:none;margin-top:15px;" id="oldbrowser" class="alert alert-warning">
+        <strong>Ooops</strong>It looks like your browser does not support some features in order to collaborate with this project. Any modern web browser should work fine like Firefox or Chrome.
+    </div>
 </div> <!-- End of Row -->
 
 <!--
@@ -273,7 +276,6 @@ function loadUserProgress() {
         $("#done").text(data.done);
     });
 }
-
 
 
 // If user presses enter do the search
@@ -622,5 +624,11 @@ pybossa.presentTask(function(task, deferred) {
     }
 });
 
-pybossa.run('bronzeageindex');
+if(Modernizr.draganddrop) {
+    pybossa.run('bronzeageindex');
+}
+else {
+    $(".skeleton").hide();
+    $("#oldbrowser").show();
+}
 </script>
