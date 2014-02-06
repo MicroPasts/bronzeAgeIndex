@@ -205,14 +205,12 @@
             <button class="btn btn-large btn-info btn-answer" value='Yes'>Submit the transcription</button>
     </div><!-- End of Question and Submission DIV (column) -->
     <div id="photo-link" class="span8"><!-- Start of Photo DIV (column) -->
-        <div class="span6 offset2">
+        <div style="margin-top:15px;">
             <div id="success" class="alert alert-success" style="display:none;">
-                <a class="close">×</a>
-                <strong>Well done!</strong> Your answer has been saved
+                <strong>Well done!</strong> You have successfully submitted your transcription. Here is another to try if you wish!
             </div>
             <div id="loading" class="alert alert-info" style="display:none;">
-                <a class="close">×</a>
-                Loading next task...
+                <img src="/static/img/loading.gif">Loading next task...
             </div>
             <div id="taskcompleted" class="alert alert-info" style="display:none;">
                 <strong>The task has been completed!</strong> Thanks a lot!
@@ -598,6 +596,8 @@ pybossa.presentTask(function(task, deferred) {
                         $("#map_" + task.id).hide();
                         $('#img_task_' + task.id).trigger('wheelzoom.reset');
                         $("html, body").animate({ scrollTop: 0 }, "slow");
+                        $("#success").fadeIn(500).fadeOut(5500);
+                        $("#loading").fadeIn(500).fadeOut(1000);
                         deferred.resolve();
                     });
                     $("#loading").fadeIn(500);
