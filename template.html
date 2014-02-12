@@ -32,7 +32,7 @@
 
 <div style="display:none;margin-top:15px; height:500px;" id="oldbrowser" class="row">
     <!-- Success and Error Messages for the user -->
-    <div  class="span8 offset1 alert alert-info">
+    <div  class="col-md-8 col-md-offset-1 alert alert-info">
         <strong>Ooops</strong> Sorry, but your browser does not support the current application. If you want to contribute, please, upgrade to a modern web browser like the open source and free alternative <a href="http://www.mozilla.org/en-US/firefox/new/">Firefox</a> or <a href="https://www.google.com/intl/en/chrome/browser/">Chrome</a>.
     </div>
 </div> <!-- End of Row -->
@@ -43,15 +43,15 @@
     task.
 -->
 <div class="row skeleton"> <!-- Start Skeleton Row-->
-    <div class="span12">
+    <div class="col-md-12">
         <h1 id="start">Please transcribe this index card</h1> <!-- The question will be loaded here -->
         <span class="label label-info">Note</span> You can use your mouse wheel trackpad to zoom in/out the picture, as well as drag & drop to navigate in the document.
 
-        <a class="btn btn-primary btn-large pull-right" href="../tutorial"><i class="icon icon-book"></i> Help</a>
+        <a class="btn btn-primary btn-lg pull-right" href="../tutorial"><i class="icon icon-book"></i> Help</a>
     </div>
 </div>
 <div class="row skeleton">
-    <div id="questions" class="span4"><!-- Start of Question and Submission DIV (column) -->
+    <div id="questions" class="col-md-4"><!-- Start of Question and Submission DIV (column) -->
             <!-- If the user clicks this button, the saved answer will be value="yes"-->
             <form id="transcription">
 
@@ -205,9 +205,9 @@
                 </div>
 
             </form>
-            <button class="btn btn-large btn-info btn-answer" value='Yes'>Submit the transcription</button>
+            <button class="btn btn-lg btn-info btn-answer" value='Yes'>Submit the transcription</button>
     </div><!-- End of Question and Submission DIV (column) -->
-    <div id="photo-link" class="span8"><!-- Start of Photo DIV (column) -->
+    <div id="photo-link" class="col-md-8"><!-- Start of Photo DIV (column) -->
         <div style="margin-top:15px;">
             <div id="success" class="alert alert-success" style="display:none;">
                 <strong>Well done!</strong> You have successfully submitted your transcription. Here is another to try if you wish!
@@ -222,8 +222,8 @@
                 <strong>Congratulations!</strong> You have participated in all available tasks!
                 <br/>
                 <div class="alert-actions">
-                    <a class="btn small" href="/">Go back</a>
-                    <a class="btn small" href="/app">or, Check other applications</a>
+                    <a class="btn-sm" href="/">Go back</a>
+                    <a class="btn-sm" href="/app">or, Check other applications</a>
                 </div>
             </div>
             <div id="error" class="alert alert-error" style="display:none;">
@@ -394,7 +394,7 @@ pybossa.taskLoaded(function(task, deferred) {
                 new OpenLayers.Control.PanZoom(),
                 new OpenLayers.Control.LayerSwitcher(),
                 new OpenLayers.Control.MousePosition({displayProjection: new OpenLayers.Projection("EPSG:4326")}),
-                new OpenLayers.Control.ScaleLine(),
+               // new OpenLayers.Control.ScaleLine(),
                 new OpenLayers.Control.Attribution()
                 ]
         });
