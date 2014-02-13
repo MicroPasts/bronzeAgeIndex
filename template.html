@@ -68,10 +68,10 @@
                         <div class="col-xs-4">
                         	<select class="form-control" name="dateDiscoveryYear"></select>
                         </div>
-                        <div class="col-xs-3">
+                        <div class="col-xs-4">
                         	<select class="col-xs-2 form-control" name="dateDiscoveryMonth"></select>
                         </div>
-                        <div class="col-xs-2">
+                        <div class="col-xs-4">
                         	<select class="col-xs-2 form-control" name="dateDiscoveryDay"></select>
                         </div>
                 </div>
@@ -81,13 +81,14 @@
                         <textarea class="form-control"  rows="3" name="rightCorner" placeholder="Right Corner"></textarea>
                 </div>
                 
-                <hr>
+                <hr />
                 
                 <div class="form-group">
                     <label class="control-label" for="site">Site</label>
-                        <textarea name="site" type="text" class="input-block-level form-control" placeholder="Left of the card"></textarea>
-                        <div class="input-append input-block-level col-xs-8">
-                            <input type="text" class="form-control" id="toSearch" name="toSearch" style="width:196px;" placeholder="Geolocate the site in a map"></input>
+                        <textarea name="site" type="text" class="form-control" placeholder="Left of the card"></textarea>
+                        <div class="input-append">
+                        <label class="control-label" for="site">Georeference the site</label>
+                            <input type="text" class="form-control" id="toSearch" name="toSearch" placeholder="Geolocate the site in a map"></input>
                             <button id="searchBtn" class="btn btn-answer" value="search" type="button"><i class="icon-search"></i> Search</button>
                         </div>
                         <div style="display:none;margin-top:15px;" id="searching" class="alert alert-info"><img src="/static/img/loading.gif"> Searching...</div>
@@ -97,7 +98,7 @@
                 </div>
                 
                 <p style="font-size:16px">I believe the location I have given on the map is accurate to within:</p>
-                <div class="input-group">
+                <div class="form-group">
                     <label class="radio">
                     <input type="radio" name="optionsAccuracy" id="optionsAccuracy100" value="100" checked>
                     100 metres
@@ -114,112 +115,87 @@
 
                 <div class="form-group">
                     <label class="control-label" for="gridRef">Grid Reference</label>
-                        <textarea rows="5" name="gridRef" class="input-block-level col-md-4" placeholder="Top left of card"></textarea>
+                        <input type="text" name="gridRef" class="form-control" placeholder="Top left of card"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label class="control-label" for="collection">Collection</label>
-                    <div class="controls">
-                        <textarea name="collection" rows="3" class="input-block-level" placeholder="Right of card"></textarea>
-                    </div>
+                        <textarea name="collection" rows="3" class="form-control" placeholder="Right of card"></textarea>
                 </div>
-                <hr>
+                
+                <hr />
+                
                 <div class="form-group">
                     <label class="control-label" for="publications">Publications</label>
-                    <div class="controls">
-                        <input class="input-block-level form-control"  type="text" name="publications" placeholder="Centre of card">
-                    </div>
+                        <textarea rows="3" class="form-control" name="publications" placeholder="Centre of card">
                 </div>
 
-                <hr>
+                <hr />
+                
                 <div class="form-group">
                     <label class="control-label" for="length">Length</label>
-                    <div class="controls">
                         <input class="form-control"  type="number" min="0" name="length" placeholder="In millimetres">
-                    </div>
                 </div>
                 
                 <div class="form-group">
                     <label class="control-label" for="width">Width</label>
-                    <div class="controls">
                         <input class="form-control"  type="number" min="0" name="width" placeholder="In millimetres">
-                    </div>
                 </div>
                 
                 <div class="form-group">
                     <label class="control-label" for="edge">Edge</label>
-                    <div class="controls">
                         <input class="form-control"  type="number" min="0" name="edge" placeholder="In millimetres">
-                    </div>
                 </div>
                 
                 <div class="form-group">
                     <label class="control-label" for="thickness">Thickness</label>
-                    <div class="controls">
                         <input class="form-control"  type="number" min="0" name="thickness" placeholder="In millimetres">
-                    </div>
                 </div>
                 
                 <div class="form-group">
                     <label class="control-label" for="weight">Weight</label>
-                    <div class="controls">
                         <input class="form-control"  type="number" min="0" name="weight" placeholder="In grammes">
-                    </div>
                 </div>
                 
                 <div class="form-group">
                     <label class="control-label" for="composition">Composition</label>
-                    <div class="controls">
                         <input class="form-control"  type="text" name="composition" placeholder="Below measurements">
-                    </div>
                 </div>
                 
                 <div class="form-group">
                     <label class="control-label" for="description">Description</label>
-                    <div class="controls">
                         <textarea type="text" rows="5" name="description"  placeholder="Below measurements"></textarea>
-                    </div>
                 </div>
                 
                 <div class="form-group">
                     <label class="control-label" for="surface">Surface</label>
-                    <div class="controls">
                         <input class="form-control"  type="text" name="surface" placeholder="Left of card">
-                    </div>
                 </div>
                 
                 <div class="form-group">
                     <label class="control-label" for="patina">Patina</label>
-                    <div class="controls">
                         <input class="form-control"  type="text" name="patina" placeholder="Towards bottom left of card">
-                    </div>
                 </div>
                 
-                <hr>
+                <hr />
                 
                 <div class="form-group">
                     <label class="control-label" for="associations">Associations</label>
-                    <div class="controls">
                         <input class="form-control"  type="text" name="associations" placeholder="Bottom centre of card">
-                    </div>
                 </div>
                 
                 <hr>
                 
                 <div class="form-group">
                     <label class="control-label" for="remarks">Remarks</label>
-                    <div class="controls">
                         <input class="form-control"  type="text" name="remarks" placeholder="Bottom centre of card">
-                    </div>
                 </div>
                 
                 <hr>
                 
                 <div class="form-group">
                     <label class="control-label" for="other">Transcriber's Comments</label>
-                    <div class="controls">
                         <textarea class="form-control"  type="text" name="other" placeholder="Add here your comments, if any."></textarea>
-                    </div>
                 </div>
 
             </form>
