@@ -58,35 +58,35 @@
             
             <form id="transcription" class="form-horizontal">
 
-                <div class="input-group">
+                <div class="form-group">
                     <label class="control-label" for="objectType">Object Type</label>
-                    <div class="controls">
                         <input class="form-control" type="text" name="objectType" placeholder="Top of card">
-                    </div>
                 </div>
 
-                <div class="input-group">
+                <div class="form-group">
                     <label class="control-label" for="dateDiscoveryYear">Date of Discovery</label>
-                    <div class="controls">
-                        <select class="col-xs-2 form-control" name="dateDiscoveryYear"></select>
-                        <select class="col-xs-2 form-control" name="dateDiscoveryMonth"></select>
-                        <select class="col-xs-2 form-control" name="dateDiscoveryDay"></select>
-                    </div>
+                        <div class="col-xs-4">
+                        	<select class="form-control" name="dateDiscoveryYear"></select>
+                        </div>
+                        <div class="col-xs-3">
+                        	<select class="col-xs-2 form-control" name="dateDiscoveryMonth"></select>
+                        </div>
+                        <div class="col-xs-2">
+                        	<select class="col-xs-2 form-control" name="dateDiscoveryDay"></select>
+                        </div>
                 </div>
 
-                <div class="input-group">
+                <div class="form-group">
                     <label class="control-label" for="rightCorner">Right Corner</label>
-                    <div class="controls">
                         <textarea class="form-control"  rows="3" name="rightCorner" placeholder="Right Corner"></textarea>
-                    </div>
                 </div>
                 
                 <hr>
                 
-                <div class="control-group">
+                <div class="form-group">
                     <label class="control-label" for="site">Site</label>
                         <textarea name="site" type="text" class="input-block-level form-control" placeholder="Left of the card"></textarea>
-                        <div class="input-append input-block-level">
+                        <div class="input-append input-block-level col-xs-8">
                             <input type="text" class="form-control" id="toSearch" name="toSearch" style="width:196px;" placeholder="Geolocate the site in a map"></input>
                             <button id="searchBtn" class="btn btn-answer" value="search" type="button"><i class="icon-search"></i> Search</button>
                         </div>
@@ -95,6 +95,7 @@
                     <div id="searchingTip" class="alert alert-info" style="display:none; margin-top:10px;">Drag & drop the <img style="width:16px;" src="http://img225.imageshack.us/img225/5237/youarehere2.png"/> to improve the location</div>
                     <div id="map" style="margin-top:15px;"></div>
                 </div>
+                
                 <p style="font-size:16px">I believe the location I have given on the map is accurate to within:</p>
                 <div class="input-group">
                     <label class="radio">
@@ -113,9 +114,7 @@
 
                 <div class="form-group">
                     <label class="control-label" for="gridRef">Grid Reference</label>
-                    <div class="controls">
                         <textarea rows="5" name="gridRef" class="input-block-level col-md-4" placeholder="Top left of card"></textarea>
-                    </div>
                 </div>
 
                 <div class="form-group">
