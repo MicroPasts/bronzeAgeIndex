@@ -46,43 +46,48 @@
     <div class="col-md-12">
         <h1 id="start">Please transcribe this index card</h1> <!-- The question will be loaded here -->
         <span class="label label-info">Note</span> You can use your mouse wheel trackpad to zoom in/out the picture, as well as drag & drop to navigate in the document.
-
-        <a class="btn btn-primary btn-lg pull-right" href="../tutorial"><i class="icon icon-book"></i> Help</a>
+        <a class="btn btn-primary btn-lg pull-right" href="../tutorial"><i class="glyphicon glyphicon-book"></i> Help</a>
     </div>
 </div>
-<div class="row skeleton">
-    <div id="questions" class="col-md-4"><!-- Start of Question and Submission DIV (column) -->
-            <!-- If the user clicks this button, the saved answer will be value="yes"-->
-            <form id="transcription">
 
-                <div class="control-group">
+<div class="row skeleton">
+   
+    <div id="questions" class="col-md-4"><!-- Start of Question and Submission DIV (column) -->
+            
+            <!-- If the user clicks this button, the saved answer will be value="yes"-->
+            
+            <form id="transcription" class="form-horizontal">
+
+                <div class="input-group">
                     <label class="control-label" for="objectType">Object Type</label>
                     <div class="controls">
-                        <input class="input-block-level" type="text" name="objectType" placeholder="Top of card">
+                        <input class="form-control" type="text" name="objectType" placeholder="Top of card">
                     </div>
                 </div>
 
-                <div class="control-group">
+                <div class="input-group">
                     <label class="control-label" for="dateDiscoveryYear">Date of Discovery</label>
                     <div class="controls">
-                        <select style="width:75px;" name="dateDiscoveryYear"></select>
-                        <select style="width:75px;" name="dateDiscoveryMonth"></select>
-                        <select style="width:62px;" name="dateDiscoveryDay"></select>
+                        <select class="col-xs-2 form-control" name="dateDiscoveryYear"></select>
+                        <select class="col-xs-2 form-control" name="dateDiscoveryMonth"></select>
+                        <select class="col-xs-2 form-control" name="dateDiscoveryDay"></select>
                     </div>
                 </div>
 
-                <div class="control-group">
+                <div class="input-group">
                     <label class="control-label" for="rightCorner">Right Corner</label>
                     <div class="controls">
-                        <input class="input-block-level"  type="text" name="rightCorner" placeholder="Right Corner">
+                        <textarea class="form-control"  rows="3" name="rightCorner" placeholder="Right Corner"></textarea>
                     </div>
                 </div>
+                
                 <hr>
+                
                 <div class="control-group">
                     <label class="control-label" for="site">Site</label>
-                        <textarea name="site" type="text" class="input-block-level" placeholder="Left of the card"></textarea>
+                        <textarea name="site" type="text" class="input-block-level form-control" placeholder="Left of the card"></textarea>
                         <div class="input-append input-block-level">
-                            <input type="text" id="toSearch" name="toSearch" style="width:196px;" placeholder="Geolocate the site in a map"></input>
+                            <input type="text" class="form-control" id="toSearch" name="toSearch" style="width:196px;" placeholder="Geolocate the site in a map"></input>
                             <button id="searchBtn" class="btn btn-answer" value="search" type="button"><i class="icon-search"></i> Search</button>
                         </div>
                         <div style="display:none;margin-top:15px;" id="searching" class="alert alert-info"><img src="/static/img/loading.gif"> Searching...</div>
@@ -91,7 +96,7 @@
                     <div id="map" style="margin-top:15px;"></div>
                 </div>
                 <p style="font-size:16px">I believe the location I have given on the map is accurate to within:</p>
-                <div class="control-group">
+                <div class="input-group">
                     <label class="radio">
                     <input type="radio" name="optionsAccuracy" id="optionsAccuracy100" value="100" checked>
                     100 metres
@@ -106,106 +111,122 @@
                     </label>
                 </div>
 
-                <div class="control-group">
+                <div class="form-group">
                     <label class="control-label" for="gridRef">Grid Reference</label>
                     <div class="controls">
-                        <textarea name="gridRef" class="input-block-level" placeholder="Top left of card"></textarea>
+                        <textarea rows="5" name="gridRef" class="input-block-level col-md-4" placeholder="Top left of card"></textarea>
                     </div>
                 </div>
 
-                <div class="control-group">
+                <div class="form-group">
                     <label class="control-label" for="collection">Collection</label>
                     <div class="controls">
-                        <textarea name="collection" class="input-block-level" placeholder="Right of card"></textarea>
+                        <textarea name="collection" rows="3" class="input-block-level" placeholder="Right of card"></textarea>
                     </div>
                 </div>
                 <hr>
-                <div class="control-group">
+                <div class="form-group">
                     <label class="control-label" for="publications">Publications</label>
                     <div class="controls">
-                        <input class="input-block-level"  type="text" name="publications" placeholder="Centre of card">
+                        <input class="input-block-level form-control"  type="text" name="publications" placeholder="Centre of card">
                     </div>
                 </div>
 
                 <hr>
-                <div class="control-group">
+                <div class="form-group">
                     <label class="control-label" for="length">Length</label>
                     <div class="controls">
-                        <input class="input-block-level"  type="number" min="0" name="length" placeholder="In millimetres">
+                        <input class="form-control"  type="number" min="0" name="length" placeholder="In millimetres">
                     </div>
                 </div>
-                <div class="control-group">
+                
+                <div class="form-group">
                     <label class="control-label" for="width">Width</label>
                     <div class="controls">
-                        <input class="input-block-level"  type="number" min="0" name="width" placeholder="In milimeters">
+                        <input class="form-control"  type="number" min="0" name="width" placeholder="In millimetres">
                     </div>
                 </div>
-                <div class="control-group">
+                
+                <div class="form-group">
                     <label class="control-label" for="edge">Edge</label>
                     <div class="controls">
-                        <input class="input-block-level"  type="number" min="0" name="edge" placeholder="In millimeters">
+                        <input class="form-control"  type="number" min="0" name="edge" placeholder="In millimetres">
                     </div>
                 </div>
-                <div class="control-group">
+                
+                <div class="form-group">
                     <label class="control-label" for="thickness">Thickness</label>
                     <div class="controls">
-                        <input class="input-block-level"  type="number" min="0" name="thickness" placeholder="In millimetres">
+                        <input class="form-control"  type="number" min="0" name="thickness" placeholder="In millimetres">
                     </div>
                 </div>
-                <div class="control-group">
+                
+                <div class="form-group">
                     <label class="control-label" for="weight">Weight</label>
                     <div class="controls">
-                        <input class="input-block-level"  type="number" min="0" name="weight" placeholder="In grammes">
+                        <input class="form-control"  type="number" min="0" name="weight" placeholder="In grammes">
                     </div>
                 </div>
-                <div class="control-group">
+                
+                <div class="form-group">
                     <label class="control-label" for="composition">Composition</label>
                     <div class="controls">
-                        <input class="input-block-level"  type="text" name="composition" placeholder="Below measurements">
+                        <input class="form-control"  type="text" name="composition" placeholder="Below measurements">
                     </div>
                 </div>
-                <div class="control-group">
+                
+                <div class="form-group">
                     <label class="control-label" for="description">Description</label>
                     <div class="controls">
-                        <textarea type="text" name="description" class="input-block-level" placeholder="Below measurements"></textarea>
+                        <textarea type="text" rows="5" name="description"  placeholder="Below measurements"></textarea>
                     </div>
                 </div>
-                <div class="control-group">
+                
+                <div class="form-group">
                     <label class="control-label" for="surface">Surface</label>
                     <div class="controls">
-                        <input class="input-block-level"  type="text" name="surface" placeholder="Left of card">
+                        <input class="form-control"  type="text" name="surface" placeholder="Left of card">
                     </div>
                 </div>
-                <div class="control-group">
+                
+                <div class="form-group">
                     <label class="control-label" for="patina">Patina</label>
                     <div class="controls">
-                        <input class="input-block-level"  type="text" name="patina" placeholder="Towards bottom left of card">
+                        <input class="form-control"  type="text" name="patina" placeholder="Towards bottom left of card">
                     </div>
                 </div>
+                
                 <hr>
-                <div class="control-group">
+                
+                <div class="form-group">
                     <label class="control-label" for="associations">Associations</label>
                     <div class="controls">
-                        <input class="input-block-level"  type="text" name="associations" placeholder="Bottom centre of card">
+                        <input class="form-control"  type="text" name="associations" placeholder="Bottom centre of card">
                     </div>
                 </div>
+                
                 <hr>
-                <div class="control-group">
+                
+                <div class="form-group">
                     <label class="control-label" for="remarks">Remarks</label>
                     <div class="controls">
-                        <input class="input-block-level"  type="text" name="remarks" placeholder="Bottom centre of card">
+                        <input class="form-control"  type="text" name="remarks" placeholder="Bottom centre of card">
                     </div>
                 </div>
+                
                 <hr>
-                <div class="control-group">
+                
+                <div class="form-group">
                     <label class="control-label" for="other">Transcriber's Comments</label>
                     <div class="controls">
-                        <textarea class="input-block-level"  type="text" name="other" placeholder="Add here your comments, if any."></textarea>
+                        <textarea class="form-control"  type="text" name="other" placeholder="Add here your comments, if any."></textarea>
                     </div>
                 </div>
 
             </form>
+            
             <button class="btn btn-lg btn-info btn-answer" value='Yes'>Submit the transcription</button>
+    
     </div><!-- End of Question and Submission DIV (column) -->
     <div id="photo-link" class="col-md-8"><!-- Start of Photo DIV (column) -->
         <div style="margin-top:15px;">
@@ -531,7 +552,7 @@ pybossa.presentTask(function(task, deferred) {
 
         // Clean
         $('select[name=dateDiscoveryYear]').html('').append($('<option/>').val('None').html('Year'));
-        for (i = 1800; i < 2000; i++)
+        for (i = 1700; i < 2000; i++)
         {
             $('select[name=dateDiscoveryYear]').append($('<option />').val(i).html(i));
         }
