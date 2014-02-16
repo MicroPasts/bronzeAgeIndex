@@ -46,16 +46,16 @@
 
         <h1 id="start">Please transcribe this index card</h1> <!-- The question will be loaded here -->
         <span class="label label-info">Note</span> You can use your mouse wheel trackpad to zoom in/out the picture, as well as drag & drop to navigate in the document.
-        <a class="btn btn-info btn-sm pull-right" href="../tutorial" data-toggle="modal" data-target="#modalTutorial"><i class="glyphicon glyphicon-book"></i> Help</a>
+        <a class="btn btn-info btn-sm pull-right" href="../tutorial" data-toggle="modal" data-target="modalTutorial"><i class="glyphicon glyphicon-book"></i> Help</a>
 
 </div>
 
 <div class="row skeleton">
-   
+
     <div id="questions" class="col-md-4"><!-- Start of Question and Submission DIV (column) -->
-            
+
             <!-- If the user clicks this button, the saved answer will be value="yes"-->
-            
+
             <form id="transcription" class="form-horizontal">
 
                 <div class="form-group">
@@ -82,9 +82,9 @@
                     <label class="control-label" for="rightCorner">Right Corner</label>
                         <textarea class="form-control"  rows="5" name="rightCorner" placeholder="Right Corner"></textarea>
                 </div>
-                
+
                 <hr />
-                
+
                 <div class="form-group">
                     <label class="control-label" for="site">Site</label>
                         <textarea name="site" type="text" class="form-control" placeholder="Left of the card"></textarea>
@@ -98,7 +98,7 @@
                     <div id="searchingTip" class="alert alert-info" style="display:none; margin-top:10px;">Drag & drop the <img style="width:16px;" src="http://img225.imageshack.us/img225/5237/youarehere2.png"/> to improve the location</div>
                     <div id="map" style="margin-top:15px;"></div>
                 </div>
-                
+
                 <p style="font-size:16px">I believe the location I have given on the map is accurate to within:</p>
                 <div class="form-group">
                     <label class="radio">
@@ -124,86 +124,86 @@
                     <label class="control-label" for="collection">Collection</label>
                         <textarea name="collection" rows="5" class="form-control" placeholder="Right of card"></textarea>
                 </div>
-                
+
                 <hr />
-                
+
                 <div class="form-group">
                     <label class="control-label" for="publications">Publications</label>
                         <textarea rows="5" class="form-control" name="publications" placeholder="Centre of card"></textarea>
                 </div>
 
                 <hr />
-                
+
                 <div class="form-group">
                     <label class="control-label" for="length">Length</label>
                         <input class="form-control" type="number" min="0" name="length" placeholder="In millimetres">
                 </div>
-                
+
                 <div class="form-group">
                     <label class="control-label" for="width">Width</label>
                         <input class="form-control"  type="number" min="0" name="width" placeholder="In millimetres">
                 </div>
-                
+
                 <div class="form-group">
                     <label class="control-label" for="edge">Edge</label>
                         <input class="form-control"  type="number" min="0" name="edge" placeholder="In millimetres">
                 </div>
-                
+
                 <div class="form-group">
                     <label class="control-label" for="thickness">Thickness</label>
                         <input class="form-control"  type="number" min="0" name="thickness" placeholder="In millimetres">
                 </div>
-                
+
                 <div class="form-group">
                     <label class="control-label" for="weight">Weight</label>
                         <input class="form-control"  type="number" min="0" name="weight" placeholder="In grammes">
                 </div>
-                
+
                 <div class="form-group">
                     <label class="control-label" for="composition">Composition</label>
                         <input class="form-control"  type="text" name="composition" placeholder="Below measurements">
                 </div>
-                
+
                 <div class="form-group">
                     <label class="control-label" for="description">Description</label>
                         <textarea type="text" rows="5" name="description"  placeholder="Below measurements" class=“form-control”></textarea>
                 </div>
-                
+
                 <div class="form-group">
                     <label class="control-label" for="surface">Surface</label>
                         <input class="form-control"  type="text" name="surface" placeholder="Left of card">
                 </div>
-                
+
                 <div class="form-group">
                     <label class="control-label" for="patina">Patina</label>
                         <input class="form-control"  type="text" name="patina" placeholder="Towards bottom left of card">
                 </div>
-                
+
                 <hr />
-                
+
                 <div class="form-group">
                     <label class="control-label" for="associations">Associations</label>
                         <input class="form-control"  type="text" name="associations" placeholder="Bottom centre of card">
                 </div>
-                
+
                 <hr>
-                
+
                 <div class="form-group">
                     <label class="control-label" for="remarks">Remarks</label>
                         <textarea class="form-control" rows="5"  name="remarks" placeholder="Bottom centre of card"></textarea>
                 </div>
-                
+
                 <hr>
-                
+
                 <div class="form-group">
                     <label class="control-label" for="other">Transcriber's Comments</label>
                         <textarea class="form-control" rows="5"  name="other" placeholder="Add here your comments, if any."></textarea>
                 </div>
 
             </form>
-            
+
             <button class="btn btn-lg btn-info btn-answer" value='Yes'>Submit the transcription</button>
-    
+
     </div><!-- End of Question and Submission DIV (column) -->
     <div id="photo-link" class="col-md-8"><!-- Start of Photo DIV (column) -->
         <div style="margin-top:15px;">
