@@ -30,6 +30,14 @@ We recommend that you read the section: [Build with PyBossa](http://docs.pybossa
 
 **NOTE**: This application uses the [pybossa-client](https://pypi.python.org/pypi/pybossa-client) in order to simplify the development of the application and its usage. Check the [documentation](http://pythonhosted.org/pybossa-client/).
 
+Updating template
+=================
+
+After making changes to your source code and committing to github do the following:
+
+*  Clone or pull changes from repo to your server
+*  Then run $ python createTasks.py -k APIKEY -s SERVERURL -t 
+*  Template should update
 
 LICENSE
 =======
@@ -39,4 +47,4 @@ Please, see the COPYING file.
 
 Acknowledgments
 ===============
-The thumbnail is from the Portable Antiquities Scheme and shows a fragment of gold torc, documented at http://finds.org.uk/database/artefacts/record/id/460255 Image licensed as CC BY-SA. 
+The thumbnail is from the Portable Antiquities Scheme and shows the Near Lewes hoard.  Image licensed as CC BY-SA. 
