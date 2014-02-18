@@ -35,8 +35,12 @@ Updating template
 
 After making changes to your source code and committing to github do the following:
 
-*  Clone or pull changes from repo to your server
-*  Then run $ python createTasks.py -k APIKEY -s SERVERURL -t 
+*  Clone or pull changes from repo to your server and then issue this command:
+
+```bash
+    $ python createTasks.py -k APIKEY -s SERVERURL -t 
+```
+
 *  Template should update
 
 LICENSE
