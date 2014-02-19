@@ -30,6 +30,23 @@
     }
 </style>
 
+<div id="survey" class="modal fade" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Hey there! Do you want to help us?</h4>
+      </div>
+      <div class="modal-body">
+        <iframe src="https://docs.google.com/forms/d/1Foe1CCfd4K_ZmtX2W8MDsoSjjDi5zd5DLgG7yRVn2HQ/viewform?embedded=true" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+      </div>
+      <!--<div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Skip</button>
+      </div>-->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <div style="display:none;margin-top:15px; height:500px;" id="oldbrowser" class="row">
     <!-- Success and Error Messages for the user -->
     <div  class="col-md-8 col-md-offset-1 alert alert-info">
@@ -273,6 +290,9 @@ Modernizr.load({
 
 function loadUserProgress() {
     pybossa.userProgress('bronzeageindex').done(function(data){
+            if (data.total >= 0) {
+                $("#survey").modal('show');
+            }
         var pct = Math.round((data.done*100)/data.total);
         $("#progress").css("width", pct.toString() +"%");
         $("#progress").attr("title", pct.toString() + "% completed!");
