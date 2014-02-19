@@ -38,7 +38,7 @@
         <h4 class="modal-title">Hey there! Do you want to help us?</h4>
       </div>
       <div class="modal-body">
-          Thanks for contributing one task for the project. We are interested in knowing how you found out about us. <strong>Could you please answer two questions for us in a short survey?</strong>
+          Thanks for contributing one task for the project. We are interested in knowing how you found out about us. <strong>Could you please answer two questions in a short survey?</strong>
 
        <!-- <iframe src="https://docs.google.com/forms/d/1Foe1CCfd4K_ZmtX2W8MDsoSjjDi5zd5DLgG7yRVn2HQ/viewform?embedded=true" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>-->
       </div>
@@ -66,15 +66,7 @@
 
         <h1 id="start">Please transcribe this index card</h1> <!-- The question will be loaded here -->
         <span class="label label-info">Note</span> You can use your mouse wheel trackpad to zoom in/out the picture, as well as drag & drop to navigate in the document.
-        <a class="btn btn-info btn-sm pull-right" href="../tutorial" data-toggle="modal" data-target="#modalTutorial"><i class="glyphicon glyphicon-book"></i> Help</a>
-        <!-- Modal -->
-<div class="modal fade" id="modalTutorial" tabindex="-1" role="dialog" aria-labelledby="remoteModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content"></div>
-    </div>
-</div>
-<!-- /.modal -->
-
+        <a class="btn btn-info btn-sm pull-right" href="../tutorial"><i class="glyphicon glyphicon-book"></i> Help</a>
 </div>
 
 <div class="row skeleton">
@@ -293,7 +285,8 @@ Modernizr.load({
 
 function loadUserProgress() {
     pybossa.userProgress('bronzeageindex').done(function(data){
-            if (data.total >= 0) {
+            console.log("Total answers done for user: " + data.done);
+            if (data.done == 1) {
                 $("#survey").modal('show');
             }
         var pct = Math.round((data.done*100)/data.total);
