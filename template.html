@@ -405,6 +405,11 @@ pybossa.taskLoaded(function(task, deferred) {
 
         var copyright = "&copy; <a href='" + task.info.link + "'>British Museum</a>";
 
+        var extent = new OpenLayers.Bounds(25.2223167419434,
+    25.2241668701172,
+    55.1579513549805,
+    55.1606941223145);
+
 
         $("#imgContainer").append(div_map);
         div_map.attr("id", "img_" + task.id);
@@ -415,7 +420,7 @@ pybossa.taskLoaded(function(task, deferred) {
           extent: [0, 0, 1024, 720]
         });
 
-        task.map = new ol.Map({
+        task.map_img = new ol.Map({
           //interactions: ol.interaction.defaults().extend([task.select, task.modify]),
           layers: [
             new ol.layer.Image({
@@ -577,6 +582,7 @@ pybossa.taskLoaded(function(task, deferred) {
         task.drawControls = drawControls;
 
         task.map = map;
+        //task.map.setOptions({restrictedExtent: extent});
         task.lon = 0;
         task.lat = 0;
 
