@@ -125,6 +125,8 @@
                     <div style="display:none;margin-top:15px;" id="searchingError" class="alert alert-warning"><strong>Location not found</strong>. If you know where it is approximately, please drag and drop the icon <img style="width:16px;" src="http://img225.imageshack.us/img225/5237/youarehere2.png"/> in the map.</div>
                     <div id="searchingTip" class="alert alert-info" style="display:none; margin-top:10px;">Drag & drop the <img style="width:16px;" src="http://img225.imageshack.us/img225/5237/youarehere2.png"/> to improve the location</div>
                     <div id="map" style="margin-top:15px;"></div>
+
+                     <div style="font-size:12px;">Marker Icon by <a href="http://mapicons.nicolasmollet.com/">Nicolas Mollet</a></div>
                 </div>
 
                 <p style="font-size:16px">I believe the location I have given on the map is accurate to within:</p>
@@ -506,7 +508,6 @@ pybossa.taskLoaded(function(task, deferred) {
         // Layer for placing the city marker
         var cityLayer = new OpenLayers.Layer.Vector("City marker", {
             styleMap: styleMapCity,
-            attribution: 'Marker Icons by <a href="http://mapicons.nicolasmollet.com/">Nicolas Mollet</a>'
         });
         map.addLayer(cityLayer);
         task.cityLayer = cityLayer;
@@ -514,7 +515,6 @@ pybossa.taskLoaded(function(task, deferred) {
         // Layer for placing the urban park marker
         var objectLayer = new OpenLayers.Layer.Vector("Urban park marker", {
             styleMap: styleMapObject,
-            attribution: 'Marker Icons by <a href="http://mapicons.nicolasmollet.com/">Nicolas Mollet</a>'
         });
         map.addLayer(objectLayer);
         task.objectLayer = objectLayer;
