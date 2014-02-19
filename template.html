@@ -25,8 +25,9 @@
         height: 0px;
     }
     .affix-bottom {
+        top: auto !important;
         position: fixed;
-        bottom: 500px;
+        bottom: 340px;
     }
 </style>
 
@@ -394,8 +395,8 @@ pybossa.taskLoaded(function(task, deferred) {
             deferred.resolve(task);
         });
         img.attr('src', task.info.url_b);
-        img.attr('width', '620px');
-        img.attr('height', '413px');
+        img.attr('width', '400px');
+        img.attr('height', '278px');
         //img.addClass('img-polaroid');
         img.css("cursor", "zoom-in");
         task.info.image = img;
