@@ -405,12 +405,13 @@ pybossa.taskLoaded(function(task, deferred) {
 
         var copyright = "&copy; <a href='" + task.info.link + "'>British Museum</a>";
 
-        var extent = new OpenLayers.Bounds(25.2223167419434,
-    25.2241668701172,
-    55.1579513549805,
-    55.1606941223145);
+        var extent = new OpenLayers.Bounds(
+                -13.413930,
+        		1.768960,
+        		49.162090,
+        		60.854691);
 
-
+		
         $("#imgContainer").append(div_map);
         div_map.attr("id", "img_" + task.id);
 
