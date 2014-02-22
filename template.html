@@ -31,7 +31,7 @@
     .affix-bottom {
         top: auto !important;
         position: fixed;
-        bottom: 340px;
+        bottom: 240px;
     }
     .imgContainer {
         height: 400px;
@@ -259,7 +259,7 @@
                 <strong>Error!</strong> Something went wrong, please contact the site administrators
             </div>
         </div> <!-- End Success and Error Messages for the user -->
-        <div id="imgContainer" data-spy="affix" data-offset-top="1" data-offset-bottom="750">
+        <div id="imgContainer" data-spy="affix" data-offset-top="1" data-offset-bottom="550">
            <!-- <img src="http://i.imgur.com/GeHxzb7.png" style="max-width=100%">-->
         </div>
     </div><!-- End of Photo DIV (columnt) -->
@@ -399,8 +399,8 @@ pybossa.taskLoaded(function(task, deferred) {
     if ( !$.isEmptyObject(task) ) {
         var img = $('<img />');
         var div_map = $('<div/>');
-        div_map.css("height", "278px");
-        div_map.css("width", "400px");
+        div_map.css("height", "313px");
+        div_map.css("width", "450px");
         div_map.css("background", "url('http://subtlepatterns.com/patterns/old_map.png') repeat");
 
         var copyright = "&copy; <a href='" + task.info.link + "'>British Museum</a>";
