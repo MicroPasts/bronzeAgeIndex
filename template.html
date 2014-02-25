@@ -405,11 +405,11 @@ pybossa.taskLoaded(function(task, deferred) {
 
         var copyright = "&copy; <a href='" + task.info.link + "'>British Museum</a>";
 
-        var extent = new OpenLayers.Bounds(
-                -13.413930,
-        		1.768960,
-        		49.162090,
-        		60.854691);
+        var extent = new OpenLayers.Bounds();
+        extent.extend(new OpenLayers.LonLat(1.768960,60.854691).transform(new OpenLayers.Projection("EPSG:4326"),
+    new OpenLayers.Projection('EPSG:900913')));
+        extent.extend(new OpenLayers.LonLat(-13.413930,49.162090).transform(new OpenLayers.Projection("EPSG:4326"),
+    new OpenLayers.Projection('EPSG:900913')));
 
 		
         $("#imgContainer").append(div_map);
@@ -583,7 +583,7 @@ pybossa.taskLoaded(function(task, deferred) {
         task.drawControls = drawControls;
 
         task.map = map;
-        //task.map.setOptions({restrictedExtent: extent});
+        task.map.setOptions({restrictedExtent: extent});
         task.lon = 0;
         task.lat = 0;
 
