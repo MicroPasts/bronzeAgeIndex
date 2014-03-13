@@ -22,6 +22,7 @@ import pbclient
 from get_images import get_flickr_set_photos
 import random
 import logging
+import time
 from requests import exceptions
 
 
@@ -165,7 +166,16 @@ def run(app_config, options):
         # For this, we get first the photo URLs from Flickr
         photos = get_flickr_set_photos(options.photoset_id)
         question = app_config['question']
-        [create_photo_task(app, p, question, priority=random.random()) for p in photos]
+        #[create_photo_task(app, p, question, priority=random.random()) for p in photos]
+        # Estimate how many minutes it has to wait before reaching the limit
+        # Limit is 300 tasks per 15 minutes
+        wait = (15 * 60) / 300
+        if len(photos) > 300:
+            wait = wait + 1 # Adding one second will take 20 minutes to add 300 tasks
+        print "Wait %s seconds between each create_task request" % wait
+        for p in photos:
+            create_photo_task(app, p, question, priority=0)
+            time.sleep(wait)
 
     pbclient.set('api_key', options.api_key)
     pbclient.set('endpoint', options.api_url)
