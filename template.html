@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="http://ol3js.org/en/master/css/ol.css" type="text/css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.min.js" type="text/javascript"></script>
 <script src="http://ol3js.org/en/master/build/ol.js" type="text/javascript"></script>
 <!--
 <script src="/static/js/vendor/jquery.wheelzoom.js" type="text/javascript"></script>
@@ -297,8 +298,9 @@ Modernizr.load({
 function loadUserProgress() {
     pybossa.userProgress('bronzeageindex').done(function(data){
             console.log("Total answers done for user: " + data.done);
-            if (data.done == 1) {
+        if ((data.done == 1) && ($.cookie('survey') === undefined)){
                 $("#survey").modal('show');
+                $.cookie('survey', 'shown', { path: '/'});
             }
         var pct = Math.round((data.done*100)/data.total);
         $("#progress").css("width", pct.toString() +"%");
