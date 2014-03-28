@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="http://ol3js.org/en/master/css/ol.css" type="text/css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.min.js" type="text/javascript"></script>
 <script src="http://ol3js.org/en/master/build/ol.js" type="text/javascript"></script>
 <!--
 <script src="/static/js/vendor/jquery.wheelzoom.js" type="text/javascript"></script>
@@ -81,7 +80,7 @@
         <a class="btn btn-info btn-sm pull-right" href="../tutorial"><i class="glyphicon glyphicon-eye-open"></i> Tutorial</a> 
         <a class="btn btn-info btn-sm pull-right" href="http://community.micropasts.org/category/crowdsourcing-support"><i class="glyphicon glyphicon-book"></i> Community Help</a>
         </div>
-        
+
 </div>
 
 <div class="row skeleton">
@@ -261,7 +260,7 @@
                 </div>
             </div>
             <div id="error" class="alert alert-error" style="display:none;">
-                <a class="close">×</a>
+                <a class="close">Ã—</a>
                 <strong>Error!</strong> Something went wrong, please contact the site administrators
             </div>
         </div> <!-- End Success and Error Messages for the user -->
@@ -301,11 +300,10 @@ Modernizr.load({
 });
 
 function loadUserProgress() {
-    pybossa.userProgress('bronzeageindex').done(function(data){
+    pybossa.userProgress('drawB16').done(function(data){
             console.log("Total answers done for user: " + data.done);
-        if ((data.done == 1) && ($.cookie('survey') === undefined)){
+            if (data.done == 1) {
                 $("#survey").modal('show');
-                $.cookie('survey', 'shown', { path: '/'});
             }
         var pct = Math.round((data.done*100)/data.total);
         $("#progress").css("width", pct.toString() +"%");
@@ -717,7 +715,7 @@ pybossa.presentTask(function(task, deferred) {
 });
 
 if(Modernizr.borderradius) {
-    pybossa.run('bronzeageindex');
+    pybossa.run('drawA9');
 }
 else {
     $(".skeleton").hide();
