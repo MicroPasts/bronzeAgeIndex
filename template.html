@@ -572,7 +572,7 @@ pybossa.taskLoaded(function(task, deferred) {
           view: new ol.View2D({
             projection: task.pixelProjection,
             center: ol.extent.getCenter(task.pixelProjection.getExtent()),
-            zoom: 1.5
+            zoom: 1.0
           })
         });
         div_map.css("display", "none");
