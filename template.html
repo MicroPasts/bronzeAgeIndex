@@ -846,7 +846,9 @@ $(document).ready(function() {
     var s = $("#imgContainer");
     
 	if ( $(window).width() < 768) {
-	s.removeClass("affix*");
+	s.removeClass("affix-bottom");
+	s.removeClass("affix");
+	s.removeClass("affix-top");
     	};
 });
 
