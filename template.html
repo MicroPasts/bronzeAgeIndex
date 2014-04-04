@@ -844,15 +844,10 @@ else {
 }
 $(document).ready(function() {
     var s = $("#imgContainer");
-    var pos = s.position();
-    $(window).scroll(function() {
-        var windowpos = $(window).scrollTop();
-
-if ( $(window).width() < 768) {
-	s.removeClass("affix-bottom");
-	s.removeClass("affix");
-	s.removeClass("affix-top");
-}
+    
+	if ( $(window).width() < 768) {
+	s.removeClass("affix*");
+	}
 
     });
 });
