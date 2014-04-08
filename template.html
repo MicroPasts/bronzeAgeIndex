@@ -426,9 +426,10 @@ Modernizr.load({
 function loadUserProgress() {
     pybossa.userProgress('drawA9').done(function(data){
             console.log("Total answers done for user: " + data.done);
-            if (data.done == 1) {
-                $("#survey").modal('show');
-            }
+               	if ((data.done == 5) &&  if ((data.done == 1) {
+   		$("#survey").modal('show');
+   		$.cookie('survey', 'shown', { path: '/'});
+		} 
         var pct = Math.round((data.done*100)/data.total);
         $("#progress").css("width", pct.toString() +"%");
         $("#progress").attr("title", pct.toString() + "% completed!");
