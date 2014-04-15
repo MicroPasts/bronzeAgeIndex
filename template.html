@@ -736,7 +736,7 @@ pybossa.presentTask(function(task, deferred) {
         $("#question").html(task.info.question);
         $('#task-id').html(task.id);
         $('<a id="raw" href=\"' + task.info.url_b + '\" class=\"btn btn-sm btn-info fancybox\" ><i class=\"glyphicon glyphicon-picture\"></i> Overlay</a>').insertAfter('#imgLink');
-        $('<a id="newtask" href=\"../newtask\" class=\"btn btn-sm btn-info\" ><i class=\"glyphicon glyphicon-picture\"></i> Different card?</a>').insertAfter('#raw');
+        $('<a id="newTask" href=\"../newtask\" class=\"btn btn-sm btn-info\" ><i class=\"glyphicon glyphicon-picture\"></i> Different card?</a>').insertAfter('#raw');
         $('<a id="flickr" rel="tooltip" target="_blank" data-toggle="tooltip" data-placement="top" title="Opens in a new window" href=\"' + task.info.link + '\" class=\"btn btn-sm btn-info\"><i class=\"icon icon-flickr\"></i> View on flickr</a>').insertAfter('#newTask');
         $('<a id="down" rel="tooltip" data-toggle="tooltip" data-placement="top" title="Only works for compliant browsers" download=\"' + task.id + '\" href=\"' + task.info.url_b + '\" class=\"btn btn-sm btn-info\" ><i class=\"glyphicon glyphicon-download\"></i> Download</a>').insertAfter('#flickr');
         
