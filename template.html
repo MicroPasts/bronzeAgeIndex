@@ -735,8 +735,8 @@ pybossa.presentTask(function(task, deferred) {
         $("#searchingTip").hide();
         $("#question").html(task.info.question);
         $('#task-id').html(task.id);
-        $('<a id="raw" href=\"' + task.info.url_b + '\" class=\"btn btn-sm btn-info\" target=\"_blank\"><i class=\"glyphicon glyphicon-picture\"></i> Raw image</a>').insertAfter('#imgLink');
-        $('<a href=\"../newtask\" class=\"btn btn-sm btn-info\" target=\"_blank\"><i class=\"glyphicon glyphicon-picture\"></i> Different card?</a>').insertAfter('#raw');
+        $('<a id="raw" href=\"' + task.info.url_b + '\" class=\"btn btn-sm btn-info\" ><i class=\"glyphicon glyphicon-picture\"></i> Raw image</a>').insertAfter('#imgLink');
+        $('<a href=\"../newtask\" class=\"btn btn-sm btn-info\" ><i class=\"glyphicon glyphicon-picture\"></i> Different card?</a>').insertAfter('#raw');
         $(".fancybox").fancybox();
         $('#imgLink').tooltip();
         //$('#img_task_' + task.id).wheelzoom();
