@@ -255,8 +255,12 @@
         </div> <!-- End Success and Error Messages for the user -->
         <div id="imgHolder" data-spy="affix" data-offset-top="1" data-offset-bottom="550">
                 <div class="btn-group">
-		<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-eye-open"></i> Tutorial</button>
+		<a class="btn btn-info btn-sm" href="#" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-eye-open"></i> Tutorial</a>
 		<a class="btn btn-info btn-sm" id="imgLink" target="_blank" data-toggle="tooltip" data-placement="top" title="Opens in a new window"  href="http://community.micropasts.org/category/crowdsourcing-support"><i class="glyphicon glyphicon-book"></i> Community Help</a>
+		<a id="raw" href="" class="btn btn-sm btn-info fancybox" ><i class="glyphicon glyphicon-picture"></i> Overlay</a>
+	        <a id="newTask" href="../newtask" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-picture"></i> Different card?</a>
+        	<a id="flickr" rel="tooltip" target="_blank" data-toggle="tooltip" data-placement="top" title="Opens in a new window" href="" class="btn btn-sm btn-info"><i class="icon icon-flickr"></i> View on flickr</a>
+        	<a id="down" rel="tooltip" data-toggle="tooltip" data-placement="top" title="Only works for compliant browsers" download="" href="" class="btn btn-sm btn-info" ><i class="glyphicon glyphicon-download"></i> Download</a>
 	</div>
         <div id="imgContainer" >
         	
@@ -736,12 +740,10 @@ pybossa.presentTask(function(task, deferred) {
         $("#question").html(task.info.question);
         $('#task-id').html(task.id);
         
-        if (!$('imgLink').length) {
-        $('<a id="raw" href=\"' + task.info.url_b + '\" class=\"btn btn-sm btn-info fancybox\" ><i class=\"glyphicon glyphicon-picture\"></i> Overlay</a>').insertAfter('#imgLink');
-        $('<a id="newTask" href=\"../newtask\" class=\"btn btn-sm btn-info\" ><i class=\"glyphicon glyphicon-picture\"></i> Different card?</a>').insertAfter('#raw');
-        $('<a id="flickr" rel="tooltip" target="_blank" data-toggle="tooltip" data-placement="top" title="Opens in a new window" href=\"' + task.info.link + '\/sizes/k/" class=\"btn btn-sm btn-info\"><i class=\"icon icon-flickr\"></i> View on flickr</a>').insertAfter('#newTask');
-        $('<a id="down" rel="tooltip" data-toggle="tooltip" data-placement="top" title="Only works for compliant browsers" download=\"' + task.id + '\" href=\"' + task.info.url_b + '\" class=\"btn btn-sm btn-info\" ><i class=\"glyphicon glyphicon-download\"></i> Download</a>').insertAfter('#flickr');
-        }
+	$("a#raw").attr("href", task.info.url_b);
+	$("a#flickr").attr("href", task.info.link + '/sizes/k/');
+	$("a#down").attr("download", task.id);
+	$("a#down").attr("href", task.info.url_b );
         
         $(".fancybox").fancybox();
         $('#imgLink').tooltip();
