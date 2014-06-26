@@ -53,6 +53,26 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+<div id="survey25" class="modal fade" data-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Congrats for completing 25 tasks!</h4>
+      </div>
+      <div class="modal-body">
+          Thanks for contributing 25 tasks for the project. Now that you have been using MicroPasts for a while, we would like to know how you found it. <strong>Could you please answer a few questions in a short survey?</strong>
+
+       <!-- <iframe src="https://docs.google.com/forms/d/1WTVapZ2Qdq0AIRazG-onDrVYDtb9xAnid7LwLrR3Uqw/viewform?embedded=true" height="400" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>-->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Skip</button>
+        <a class="btn btn-large btn-success" href="https://docs.google.com/forms/d/1WTVapZ2Qdq0AIRazG-onDrVYDtb9xAnid7LwLrR3Uqw/viewform?embedded=true">Of course! Take me to the survey!</a>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <div style="display:none;margin-top:15px; height:500px;" id="oldbrowser" class="row">
     <!-- Success and Error Messages for the user -->
     <div  class="col-md-8 col-md-offset-1 alert alert-info">
@@ -431,6 +451,12 @@ function loadUserProgress() {
            $("#survey").modal('show');
            $.cookie('survey', 'shown', { path: '/'});
         }
+
+    if ((data.done == 25) && ($.cookie('survey25') === undefined)){
+           $("#survey25").modal('show');
+           $.cookie('survey25', 'shown', { path: '/'});
+        }
+
         var pct = Math.round((data.done*100)/data.total);
         $("#progress").css("width", pct.toString() +"%");
         $("#progress").attr("title", pct.toString() + "% completed!");
