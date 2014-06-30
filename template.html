@@ -597,7 +597,7 @@ pybossa.taskLoaded(function(task, deferred) {
           ],
           renderer: 'canvas',
           target: 'img_' + task.id,
-          view: new ol.View2D({
+          view: new ol.View({
             projection: task.pixelProjection,
             center: ol.extent.getCenter(task.pixelProjection.getExtent()),
             zoom: 1.0
