@@ -1,6 +1,9 @@
 Bronze Age Index app for PyBossa
 ================================
 
+[![DOI](https://www.zenodo.org/badge/16073715.svg)](https://www.zenodo.org/badge/latestdoi/16073715)
+
+
 This application has four files:
 
 *  createTasks.py: for creating the application in PyBossa, and fill it with some tasks.
